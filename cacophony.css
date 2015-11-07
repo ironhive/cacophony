@@ -1,0 +1,8 @@
+/* CSS declarations go here */
+.addProductForm {
+    display: none;
+}
+
+.show {
+    display: block !important;
+}

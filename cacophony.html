@@ -1,0 +1,42 @@
+<head>
+	<title>Cacophony Club</title>
+</head>
+
+<body>
+	<h1>Login to Begin</h1>
+	{{> loginButtons }}
+	{{> primaryActions }}
+	{{> addProduct }}
+	{{> barcode_scanner}}
+</body>
+
+<template name="primaryActions">
+	{{#if currentUser}}
+		<button class="add">Add Product</button>
+		<button class="checkout">Checkout Product</button>
+		<button class="return">Return Product</button>
+		{{#if currentUser.services.twitter}}
+			<img src="{{currentUser.services.twitter.profile_image_url}}" />
+		{{/if}}
+		{{#if currentUser.services.facebook}}
+			<img src="http://graph.facebook.com/{{currentUser.services.facebook.id}}/picture/?type=small" />
+		{{/if}}
+
+	{{/if}}
+</template>
+
+<template name="addProduct">
+	<form class="addProductForm {{productAdd}}">
+		<input type="text" placeholder="Enter ISBN" name="productLookup" id="product-lookup">
+		<input type="submit" id="submit_product-lookup" value="Find Product">
+	</form>
+	<img src="{{productSearch}}" />
+</template>
+
+<template name="listing">
+
+</template>
+
+<template name="barcode_scanner">
+	<button>Scan</button>
+</template>
