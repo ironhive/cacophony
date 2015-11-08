@@ -45,7 +45,7 @@ if (Meteor.isClient) {
 
   Template.barcode_scanner.events({
     'click button': function () {
-      var Quagga = Meteor.npmRequire('quagga');
+      //var Quagga = Meteor.npmRequire('quagga');
       Quagga.init({
         inputStream: {
           name: "Live",
